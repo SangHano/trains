@@ -1,0 +1,26 @@
+{
+  "name": "fullstack",
+  "version": "1.0.0",
+  "description": "fullstack application demo",
+  "main": "server/index.js",
+  "scripts": {
+    "server": "cd server && npm run start",
+    "server:dev": "cd server && npm run dev",
+    "client:build": "cd client && npm run build",
+    "client:dev": "cd client && npm run dev",
+    "dev": "concurrently \"npm run client:dev\" \"npm run server:dev\"",
+    "start": "npm run client:build && npm run server",
+    "seed": "cd server && npm run seed",
+    "install:all": "npm install && concurrently \"cd server && npm install\" \"cd client && npm install\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "react-router-dom": "^6.15.0"
+  }
+}
